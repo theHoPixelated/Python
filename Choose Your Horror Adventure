@@ -1,0 +1,234 @@
+#my adventure game yas
+print("\n", "Choose your own Horror Adventure", "\n")
+print("********************************")
+
+tryAgain = False
+
+while tryAgain == False:
+    print("Welcome to the...")
+    
+    place = " "
+    #choose yo place
+    while place != "c"  and place != "i":
+        place = input("Log Cabin (c) Ice Cream Shop (i)")
+        print("************************************", "\n")
+
+    #sentence change
+    if place == "c":
+        choice = "LOG CABIN"
+    elif place == "i":
+        choice = "ICE CREAM SHOP"
+
+    #intro
+    print("The ", choice, " Horror Adventure")
+    print("\n", "*******************************", "\n")
+    print("You wake up from your slumber, face full of sweat.")
+    print("Ugh. It's hot inside, it's hot outside, it's hot everywhere. \n")
+    conditioner = input("Turn on the air condtioner? Yes (y) No (n) ")
+    print("\n", "*******************************", "\n")
+    if conditioner == "y":
+        print("You try to turn on the air conditioner.\n")
+        print("*A sigh comes from the air conditoner, following a loud crash.")
+        print("Great, the air condtioner is broken")
+    else:
+        print("Youre too cheap to turn on AC. Instead you decide its best to")
+        print("go out.")
+    
+    print("\n", "As you step outside, you notice a flyer on the floor.")
+
+    if place == "c":
+        print("\t", "FEELING HOT WITH NOWHERE TO GO?")
+        print("\t", "Come enjoy a weekend getaway")
+        print("\t", "at Carrie's Cabin!")
+    elif place == "i":
+        print("\t", "I SCREAM YOU SCREAM")
+        print("\t", "WE ALL SCREAM ")
+        print("\t", "at Irah's Ice Cream Shop!")
+
+    print("\n", "You decide to got to the ", choice, ".")
+    print("\n", "*******************************", "\n")
+
+    #LOG CABIN
+    while place == "c":
+        goodEnd = False
+        print("Wow. This is the cabin? Nice.\n")
+        phone = False
+        books = False
+        keys = False
+        door = False
+        check = False
+        print("After driving for 6 hours, you realize how tired you are.")
+        print("But before you go to sleep, you feel an urge to look at ")
+        print("something. ")
+        while check == False:
+            bCheck = input("Check the counter (c) bookshelf (b) your coat hanger (p)")
+            print("\n", "*******************************", "\n")
+            if bCheck == "c" and phone == False:
+                print("You check the counter by the door")
+                print("Your phone is there. For some reason you want to hold onto it.")
+                take = input("Take it? Yes (y) No (n)")
+                print("\n", "*******************************", "\n")
+                if take == "y":
+                    phone = True
+                    print("You pick up your phone and put it into your pocket.")
+                else:
+                    print("You leave the phone back on the counter. ")
+                print("")
+            elif bCheck == "b" and books == False:
+                print("You check the bookshelf")
+                print("You find one lonely newspaper bunch on the bookshelf. The title says DAILY NEWS. ")
+                read = input("Read it? Yes (y) No (n)")
+                print("\n", "*******************************", "\n")
+                if read == "y":
+                    print("You pick up and open the newspaper to the front page.")
+                    print("MAN KILLS WIFE AND 3 KIDS AND LEAVES THEM IN BASEMENT\n")
+                    print("You flip the page\n")
+                    print("You see writings scrawled on the back of the newspaper")
+                    print("THAT WASNT THEM ...\n")
+                    print("That was all you could make out. \n")
+                    print("You notice the wall paper is peeled up at the edge behind the wall paper")
+                    peel = input("Peel it? Yes (y) No (n)")
+                    print("\n", "*******************************", "\n")
+                    books = True
+                    if peel == "y":
+                        print("Nothing is there. You feel stupid. You put the newspaper back.")
+                        door = True
+                    else:
+                        print("Like a law abiding citizen, you choose not to destroy the wall paper.") 
+                else:
+                    print("You put the book back.")
+            elif bCheck == "p" and keys == False:
+                print("You notice that your jackets pockets arent heavy like usual.")
+                print("Shoot! Your keys are gone. You must have forgotten them back in the car. ")
+                print("You look out the window. Its pitch dark outside. A shiver goes down your back.")
+                print("")
+                keysB = input("Go back outside and get your car keys? Yes (y) No (n)")
+                print("\n", "*******************************", "\n")
+
+                if keysB == "y":
+                    for i in range (2):
+                        print("Are you sure you want to check outside? The forest outside your cabin looks menacing.")
+                        print("Maybe you should have thought twice about going to a Cabin alone out in the woods.")
+                        print("")
+                        keysB = input("Go back outside and get your car keys? Yes (y) No (n)")
+                        print("\n", "*******************************", "\n")
+
+                        if keysB == "n":
+                            keys = False
+                    if keysB == "y":
+                        print("Huh, as you open the door, you realize you forgot to lock the door to begin with")
+                        print("You go back outside to get your car keys. You feel like youre being watched.")
+                        print("Found it. You grab your keys and walk fast back into the Cabin. ")
+                        print("You lock the Cabin door behind you.")
+                        print("\n", "*******************************", "\n")
+
+                        keys = True
+            elif phone == True and door == True and keys == True:
+                goodEnd = True
+                
+            cCheck = input("Do you want to check something else? Yes (y) No (n)")
+            print("\n", "*******************************", "\n")
+            if cCheck == "n":
+                check = True
+            else:
+                check = False
+                
+        print("\n", "You yawn. It\"s time to go to sleep.")
+
+        print("\n", "*******************************", "\n")
+        
+        print("You wake with aches all over your body.")
+        if goodEnd == True:
+            print("Everything is gone! Your wallet, your... nope just your wallet, you have everything else.")
+            print("You jolt up. Theres someone in the corner. You cant see well because the room is so dark.")
+            print("It slowly comes closer your way. You notice the bookself is gone. Leaving an open hole in")
+            print("the wall.")
+            kill = input("Push the shadow out the hole? (p) Run out the hole (r)")
+            print("\n", "*******************************", "\n")
+
+            if kill == "p":
+                print("You push the shadow, feeling something squishy and wet on your hands.")
+                print("You run to your car and start your engine.")
+                print("You can hear the cabin door swing open in the distance as you drive the fuck away.")
+                print("You dont look back")
+            elif kill == "r":
+                print("You run out the hole. Stairs? You trip and fall down the stairs and find that the ")
+                print("door is slowly closing. You fell into the basement, and find yourself alone in the")
+                print("pitch black with your new friend.")
+        else:
+            print("Everything is gone! Your phone, your keys, your wallet! You\"ve been robbed!")
+            print("You jolt up. There\"s someone in the corner. You can\"t see well because the room is so dark.")
+            print("It slowly comes closer your way.\\n")
+            enter = " "
+            enter = input("Wake up! (y)")
+            if enter != " ":
+                print("You wake up from your nightmare.")
+                print("")
+                print("Everything is gone! Your phone, your keys, your wallet! Youve been robbed!")
+                print("You jolt up. Theres someone in the corner. You cant see well because the room is so dark.")
+                print("You notice its closer than you remember\\n")
+                enter = input("Wake up! (y)")
+            else:
+                print("You give up and let the creature creep closer. You close your eyes and go to sleep.")
+            if enter == "y":
+                print("You wake up from your nightmare.")
+                print("")
+                print("Everything is gone! Your phone, your keys, your wallet! Youve been robbed!")
+                print("You jolt up. You cant see well because the room is so dark.")
+                print("You notice its closer than you remember\n", "\n")
+            print("The creature is right at the end of your bed.")
+        place = "n"
+
+    #ICE CREAM    
+    while place == "i":
+        print("This ice cream shop looks... okay. One of the letters isn't working")
+        print("but thats no big deal. The shop's well lit; the ice cream looks... sanitary.")
+        print("You walk up to the cashier.\n")
+        flavor = input("Which ice cream would you like? chocolate (c) strawberry (s) vanilla (v)")
+        print("\n", "*******************************", "\n")
+        if flavor == "c":
+            iceCream = "CHOCOLATE"
+        if flavor == "s":
+            iceCream = "STRAWBERRY"
+        if flavor == "v":
+            iceCream = "VANILLA"
+        print("You ask for ", iceCream, ". It looks a little melty. Slowly, you scoop ")
+        print("the ice cream out of the cup and into your mouth. Hm, not bad.")
+        print(iceCream, "flavored.")
+        print("")
+        print("You suddenly feel the need to go to the restroom. Oh, man. You can ")
+        print("feel yo ass summon satan.")
+        restroom = input("Open the restroom door? Yes (y) No (n) ")
+        print("\n", "*******************************", "\n")
+        if restroom == "y":
+            print("Its locked")
+        print("You pace around looking for the cashier, but the place is empty.")
+        print("Strange. You see a glimmer in your ice cream.")
+
+        dKey = " "
+        while dKey != "y" and dKey != "n":
+            dKey = input("Pick it out? Yes (y) No (n) ")
+        if dKey == "n":
+            dKeyB = False
+            print("You sit back down. You are only dreaming, you say. ")
+            print("Please be a nightmare. Please be a nightmare. You pray.")
+            
+        else:
+            dKeyB = True
+            print("You reach into your ice cream and find a door key. Yuck.")
+            print("You quickly open the restroom door with your key.")
+            print("The toilet is clogged.")
+        print("\n", "*******************************", "\n")
+        
+        place = "n"
+
+    print("")
+    print("THE END")
+    again = "h"
+    while again != "y" and again != "n":
+        again = input("Try Again? Yes (y) No (n)")
+    if again == "n":
+        tryAgain = True
+    else:
+        tryAgain = False
+
